@@ -10,5 +10,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="git_demo_25-09Flow" doc:id="402ff8ad-31b5-4c6a-9f7c-9a46bb7ef45a" >
 		<http:listener doc:name="Listener" doc:id="3dc021c3-aeb5-4d2f-b448-82089d44eb3f" config-ref="HTTP_Listener_config" path="/demo"/>
 		<set-payload value='#["Git Example"]' doc:name="Set Payload" doc:id="5620a35b-e8ea-4df1-b305-03b5df620ae1" />
+		<set-variable value='#["Hi There, Welcome"]' doc:name="Set Variable" doc:id="e478c3b2-49d7-4e08-8975-40add9d21132" variableName="DemoValue"/>
+		<set-payload value="#[vars.DemoValue]" doc:name="Set Payload" doc:id="ea126245-709d-460d-9c1f-b0cd322e0803" />
 	</flow>
 </mule>
